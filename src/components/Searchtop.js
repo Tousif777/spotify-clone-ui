@@ -61,20 +61,22 @@ const Searchtop = () => {
             SIgn up
           </Button>
         </Link>
-        <Button
-          className="button"
-          style={{
-            backgroundColor: "White",
-            marginLeft: "10px",
-            marginRight: "20px",
-            width: "130px",
-            borderRadius: "20px",
-            fontSize: "15px",
-            fontWeight: "bold",
-          }}
-        >
-          Log In
-        </Button>
+        <Link to="/login" style={{ textDecoration: "none" }}>
+          <Button
+            className="button"
+            style={{
+              backgroundColor: "White",
+              marginLeft: "10px",
+              marginRight: "20px",
+              width: "130px",
+              borderRadius: "20px",
+              fontSize: "15px",
+              fontWeight: "bold",
+            }}
+          >
+            Log In
+          </Button>
+        </Link>
       </div>
     </div>
   );
