@@ -9,7 +9,7 @@ const Hometop = () => {
     <div
       style={{
         color: "white",
-        flex: 0.1,
+        height: "70px",
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",

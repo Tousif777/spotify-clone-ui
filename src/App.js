@@ -4,24 +4,32 @@ import Home from "./components/Home";
 import Searchhome from "./components/Searchhome";
 import Sidebar from "./components/Sidebar";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import SignUp from "./components/SignUp";
 
 function App() {
   return (
     <Router>
       <div className="App">
         <div className="main">
-          <Sidebar />
           <Switch>
             <Route exact path="/">
+              <Sidebar />
               <Home />
+              <div className="footer">
+                <Footer style={{ flex: "0.2" }} />
+              </div>
             </Route>
             <Route path="/search">
+              <Sidebar />
               <Searchhome />
+              <div className="footer">
+                <Footer style={{ flex: "0.2" }} />
+              </div>
+            </Route>
+            <Route path="/signup">
+              <SignUp />
             </Route>
           </Switch>
-        </div>
-        <div className="footer">
-          <Footer style={{ flex: "0.2" }} />
         </div>
       </div>
     </Router>

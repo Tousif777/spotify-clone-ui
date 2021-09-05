@@ -10,13 +10,14 @@ import {
 } from "@material-ui/core";
 import SearchIcon from "@material-ui/icons/Search";
 import "./Hometop.css";
+import { Link } from "react-router-dom";
 
 const Searchtop = () => {
   return (
     <div
       style={{
         color: "white",
-        flex: 0.1,
+        height: "70px",
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
@@ -46,18 +47,20 @@ const Searchtop = () => {
         />
       </div>
       <div>
-        <Button
-          className="button"
-          style={{
-            width: "130px",
-            borderRadius: "20px",
-            color: "white",
-            fontSize: "15px",
-            fontWeight: "bold",
-          }}
-        >
-          SIgn up
-        </Button>
+        <Link to="/signup" style={{ textDecoration: "none" }}>
+          <Button
+            className="button"
+            style={{
+              width: "130px",
+              borderRadius: "20px",
+              color: "white",
+              fontSize: "15px",
+              fontWeight: "bold",
+            }}
+          >
+            SIgn up
+          </Button>
+        </Link>
         <Button
           className="button"
           style={{
