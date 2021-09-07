@@ -1,17 +1,16 @@
 import React from "react";
-import "./Sidebar.css";
+import { Link } from "react-router-dom";
 import SidebarOptions from "./SidebarOptions";
 import HomeIcon from "@material-ui/icons/Home";
 import SearchIcon from "@material-ui/icons/Search";
-import LibraryMusicIcon from "@material-ui/icons/LibraryMusic";
-import FavoriteIcon from "@material-ui/icons/Favorite";
-import AddIcon from "@material-ui/icons/Add";
-import { Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Button } from "@material-ui/core";
+import LibraryMusicIcon from "@material-ui/icons/LibraryMusic";
+import FavoriteIcon from "@material-ui/icons/Favorite";
+import AddIcon from "@material-ui/icons/Add";
 
-const Sidebar = () => {
+const Mobilesidebar = () => {
   const notify = () =>
     toast(
       <div>
@@ -28,9 +27,8 @@ const Sidebar = () => {
         </Link>
       </div>
     );
-
   return (
-    <div className="sidebar">
+    <div>
       <img
         className="sidebar__logo"
         src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_CMYK_Green.png"
@@ -43,7 +41,6 @@ const Sidebar = () => {
           title="Home"
         />
       </Link>
-
       <Link to="/search" style={{ textDecoration: "none" }}>
         <SidebarOptions
           className="sidebaroption"
@@ -66,4 +63,4 @@ const Sidebar = () => {
   );
 };
 
-export default Sidebar;
+export default Mobilesidebar;

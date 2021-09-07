@@ -8,35 +8,28 @@ import {
   InputAdornment,
   TextField,
 } from "@material-ui/core";
+import MenuIcon from "@material-ui/icons/Menu";
 import SearchIcon from "@material-ui/icons/Search";
 import "./Hometop.css";
 import { Link } from "react-router-dom";
+import Drawer from "react-modern-drawer";
+import "react-modern-drawer/dist/index.css";
+import Mobilesidebar from "./Mobilesidebar";
 
 const Searchtop = () => {
+  const [isOpen, setIsOpen] = React.useState(false);
+  const toggleDrawer = () => {
+    setIsOpen((prevState) => !prevState);
+  };
   return (
-    <div
-      style={{
-        color: "white",
-        height: "70px",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "space-between",
-        padding: "0px 20px",
-        backgroundColor: "#1a1a1a",
-      }}
-    >
-      <div>
+    <div className="searchtop">
+      <div className="arrowsign">
         <ArrowBackIosIcon className="arrow" />
         <ArrowForwardIosIcon className="arrow" />
       </div>
       <div>
         <Input
-          style={{
-            backgroundColor: "white",
-            borderRadius: "20px",
-            width: "340px",
-            height: "40px",
-          }}
+          className="search"
           disableUnderline
           placeholder="Artists, songs, or podcasts"
           startAdornment={
@@ -46,7 +39,7 @@ const Searchtop = () => {
           }
         />
       </div>
-      <div>
+      <div className="signinup">
         <Link to="/signup" style={{ textDecoration: "none" }}>
           <Button
             className="button"
@@ -77,6 +70,19 @@ const Searchtop = () => {
             Log In
           </Button>
         </Link>
+      </div>
+      <div className="menubutton">
+        <IconButton>
+          <MenuIcon style={{ color: "white" }} onClick={toggleDrawer} />
+        </IconButton>
+        <Drawer
+          style={{ backgroundColor: "#040404" }}
+          open={isOpen}
+          onClose={toggleDrawer}
+          direction="left"
+        >
+          <Mobilesidebar />
+        </Drawer>
       </div>
     </div>
   );

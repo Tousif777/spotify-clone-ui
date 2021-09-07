@@ -8,7 +8,9 @@ const Searchhome = () => {
     <div className="body">
       <Searchtop />
       <br />
-      <BrowseCard />
+      <div className="container">
+        <BrowseCard />
+      </div>
     </div>
   );
 };

@@ -14,14 +14,18 @@ function App() {
         <div className="main">
           <Switch>
             <Route exact path="/">
-              <Sidebar />
+              <div className="sidebar">
+                <Sidebar />
+              </div>
               <Home />
               <div className="footer">
                 <Footer style={{ flex: "0.2" }} />
               </div>
             </Route>
             <Route path="/search">
-              <Sidebar />
+              <div className="sidebar">
+                <Sidebar />
+              </div>
               <Searchhome />
               <div className="footer">
                 <Footer style={{ flex: "0.2" }} />

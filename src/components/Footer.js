@@ -17,6 +17,8 @@ const Footer = () => {
           <div className="footer-content-right-item">
             <Link to="/signup" style={{ textDecoration: "none" }}>
               <Button
+                className="btn"
+                variant="contained"
                 style={{
                   backgroundColor: "white",
                   width: "230px",

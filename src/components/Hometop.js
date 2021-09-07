@@ -1,24 +1,22 @@
 import React from "react";
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
-import { Button } from "@material-ui/core";
+import { Button, IconButton } from "@material-ui/core";
 import "./Hometop.css";
 import { Link } from "react-router-dom";
+import MenuIcon from "@material-ui/icons/Menu";
+import Drawer from "react-modern-drawer";
+import "react-modern-drawer/dist/index.css";
+import Mobilesidebar from "./Mobilesidebar";
 
 const Hometop = () => {
+  const [isOpen, setIsOpen] = React.useState(false);
+  const toggleDrawer = () => {
+    setIsOpen((prevState) => !prevState);
+  };
   return (
-    <div
-      style={{
-        color: "white",
-        height: "70px",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "space-between",
-        padding: "0px 20px",
-        backgroundColor: "#1a1a1a",
-      }}
-    >
-      <div>
+    <div className="hometop">
+      <div className="arrowsign">
         <ArrowBackIosIcon className="arrow" />
         <ArrowForwardIosIcon className="arrow" />
       </div>
@@ -53,6 +51,19 @@ const Hometop = () => {
             Log In
           </Button>
         </Link>
+      </div>
+      <div className="menubutton">
+        <IconButton>
+          <MenuIcon style={{ color: "white" }} onClick={toggleDrawer} />
+        </IconButton>
+        <Drawer
+          style={{ backgroundColor: "#040404" }}
+          open={isOpen}
+          onClose={toggleDrawer}
+          direction="left"
+        >
+          <Mobilesidebar />
+        </Drawer>
       </div>
     </div>
   );

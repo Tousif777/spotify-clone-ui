@@ -8,6 +8,7 @@
   color: white;
   border-top: 1px solid black;
 }
+
 .footer-content-left {
   margin-bottom: 10px;
 }
@@ -16,4 +17,16 @@
   justify-content: space-between;
   padding-left: 10px;
   padding-right: 10px;
+}
+@media screen and (max-width: 768px) {
+  .footer {
+    height: 150px;
+    width: 100%;
+  }
+  .footer-content {
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
 }
